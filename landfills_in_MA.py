@@ -9,10 +9,16 @@ downloaded dataset from mass.gov, 'Master List of Solid Waste Facilities in Mass
 
 """
 
+import os
+os.chdir(r'C:\Users\MakerLab\Desktop\Random')
+
+
+####
+
 import pandas as pd
 import numpy as np
 
-sites = pd.read_csv('landfillsma.csv')
+sites = pd.read_csv('sitesnotnull.csv')
 
 sites.dropna(subset=['TPD_Max']) 
 #drop null values
@@ -26,7 +32,7 @@ sites2 = sites.dropna(subset=['TPD_Max'])
 sitesbycity = sites2.groupby('Muni').agg({'TPD_Max':['sum']})
 #group solid waste sites by city, sum total number of tons of trash in landfills in each city
 
-sitesbycity.index.name = 'Muncipilaty'
+sitesbycity.index.name = 'Muncipality'
 #rename index column (formerly 'Muni' in original dataset) as Municipality
 
 sitesbycity.to_clipboard()
