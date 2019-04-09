@@ -8,13 +8,6 @@ Tons of Waste in Solid Waste Facilities Around Massachusetts, by Municipality
 downloaded dataset from mass.gov, 'Master List of Solid Waste Facilities in Massachusetts, May 2018
 
 """
-
-import os
-os.chdir(r'C:\Users\MakerLab\Desktop\Random')
-
-
-####
-
 import pandas as pd
 import numpy as np
 
